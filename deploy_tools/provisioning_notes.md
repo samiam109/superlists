@@ -16,11 +16,19 @@ eg, on Ubuntu:
 
 * see nginx.template.conf
 * replace SITENAME with, eg. staging.2ndlvldomain.topllvldomain (staging.webstie.com)
+* sudo sed "s/SITENAME/SITENAME/g" \
+ source/deploy_tools/nginx.template.conf \
+ | sudo tee /etc/nginx/sites-available/SITENAME
+* sudo ln -s /etc/nginx/sites-available/SITENAME \
+ /etc/nginx/sites-enabled/SITENAME
 
 ## Systemd service
 
 * see gunicorn-systemd.template.service
 * replace SITENAME with, eg. staging.2ndlvldomain.topllvldomain (staging.webstie.com)
+* sudo sed "s/SITENAME/SITENAME/g" \
+ source/deploy_tools/gunicorn-systemd.template.service \
+ | sudo tee /etc/systemd/system/gunicorn-SITENAME.service
 
 ## Folder structure:
 
