@@ -39,3 +39,6 @@ eg, on Ubuntu:
         - /source
         - /static
         - /virtualenv
+        
+## Running fab
+fab deploy:host=user@domain.com:port -i ssh/private_key_location
